@@ -2,11 +2,15 @@
   "compilerOptions": {
     "rootDirs": ["src"],
     "outDir": "dist",
-    "lib": ["es2020"],
-    "target": "es2020",
-    "module": "esnext",
+    "lib": ["ES2020"],
+    "target": "ES2020",
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "types": ["node"]
-  }
+  },
+  "include": ["src/**/*.ts", "env.d.ts"],
+  "exclude": ["node_modules"]
 }

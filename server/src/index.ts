@@ -3,11 +3,11 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 
 import jwt from "jsonwebtoken";
 
-import typeDefs from "./graphql/schema/index.js";
-import resolvers from "./graphql/resolvers/index.js";
+import typeDefs from "./graphql/schema/index";
+import resolvers from "./graphql/resolvers/index";
 
-import countryAPI from "./datasources/country.apollo.js";
-import currencyAPI from "./datasources/currency.apollo.js";
+import countryAPI from "./datasources/country.apollo";
+import currencyAPI from "./datasources/currency.apollo";
 
 const server = new ApolloServer({
   typeDefs,

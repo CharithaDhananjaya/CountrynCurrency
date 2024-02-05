@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { inputUser, User } from "../../types/index.types";
+import { inputUser } from "../../types/index.types";
 
 import { RegisteredUsers } from "../../datasources/user.mimik.js";
 

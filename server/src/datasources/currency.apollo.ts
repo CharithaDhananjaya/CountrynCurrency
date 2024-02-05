@@ -5,7 +5,7 @@ class currencyAPI extends RESTDataSource {
   baseURL = "http://data.fixer.io/api/";
 
   async getCurrencyData(uriSting: string) {
-    console.log("URI", uriSting, process.env.FIXER_API_KEY);
+    //console.log("URI", uriSting, process.env.FIXER_API_KEY);
     return this.get(
       `latest?access_key=${process.env.FIXER_API_KEY}${uriSting}`
     );

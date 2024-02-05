@@ -24,30 +24,32 @@ function SignInForm() {
   const navigate = useNavigate();
 
   const USER_SIGNIN = gql`
-    query Query($userCredentials: inputUser) {
+    query UserSignIn($userCredentials: inputUser) {
       userSignIn(userCredentials: $userCredentials) {
-        userId
         firstName
-        token
-        validity
         lastName
         message
+        token
+        userId
+        validity
       }
     }
   `;
   const [userSignIn, { loading, error, data }] = useLazyQuery(USER_SIGNIN, {
-    onCompleted: (queryData) => {
-      if (queryData.userSignIn.message === "USER_NOT_FOUND") {
+    fetchPolicy: "no-cache",
+    notifyOnNetworkStatusChange: true,
+    onCompleted: (data) => {
+      if (data.userSignIn.message === "USER_NOT_FOUND") {
         localStorage.clear();
         alert("Invalid Email");
         navigate("/");
-      } else if (queryData.userSignIn.message === "INVALID_PASSWORD") {
+      } else if (data.userSignIn.message === "INVALID_PASSWORD") {
         localStorage.clear();
         alert("Invalid Password");
         navigate("/");
       } else {
         localStorage.clear();
-        localStorage.setItem("authUser", JSON.stringify(queryData.userSignIn));
+        localStorage.setItem("authUser", JSON.stringify(data.userSignIn));
         navigate("/user");
       }
     },

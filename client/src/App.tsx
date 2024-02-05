@@ -5,7 +5,7 @@ import SignInForm from "./pages/_auth/forms/SignInPage";
 import SignUpForm from "./pages/_auth/forms/SignUpPage";
 
 import UserPageLayout from "./pages/_userpages/UserPageLayout";
-import UserPage from "./pages/_userpages/UserPage";
+import UserPage from "./pages/_userpages/pages/UserPage";
 
 function App() {
   return (
@@ -15,11 +15,11 @@ function App() {
           {/* Public Routes */}
           <Route element={<AuthLayout />}>
             <Route index element={<SignInForm />} />
-            <Route path="sign-up" element={<SignUpForm />} />
+            <Route path="/sign-up" element={<SignUpForm />} />
           </Route>
           {/* Private Routes */}
           <Route element={<UserPageLayout />}>
-            <Route path="user" element={<UserPage />}></Route>
+            <Route path="/user" element={<UserPage />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -63,6 +63,7 @@ $ npm install --save
 
 ### What Not Feels Great
 
+- More Error handeling, Error pop-up etc.
 - Creating the user sign-up feature
 - Should have improve the use to type in TS in both server and client
 - Took a little extra than a day as focus this project as a test

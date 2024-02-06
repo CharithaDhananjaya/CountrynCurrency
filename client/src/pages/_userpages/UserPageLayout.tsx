@@ -1,12 +1,17 @@
 import { Outlet, Navigate } from "react-router-dom";
 
+import { useAuth } from "../../hooks/useAuth";
+
+import ProtectedView from "../ProtectedView";
+
 const userPageLayout = () => {
-  const isAuthenticated = false;
+  const { user } = useAuth();
 
   return (
     <>
-      {isAuthenticated ? (
-        <Navigate to="/" />
+      {!user ? (
+        // <Navigate to="/" />
+        <ProtectedView />
       ) : (
         <>
           <Outlet />

@@ -1,4 +1,4 @@
-//import { useState } from "react";
+import { useAuth } from "../../../hooks/useAuth";
 
 import {
   Avatar,
@@ -13,6 +13,8 @@ import SearchBar from "../../../components/customized/SearchBar";
 import CountryList from "../../../components/customized/CountryList";
 
 function UserPage() {
+  const { logout } = useAuth();
+
   return (
     <>
       <div className="flex flex-col w-screen h-screen px-8 py-8">
@@ -21,13 +23,23 @@ function UserPage() {
           <div className="flex flex-row items-center justify-end sm:justify-between">
             <Logo />
             {/* User Avatar and Name - Button with a Dropdown */}
-            <Button className="flex flex-row items-center gap-2 h-fit w-fit px-4 py-2.5 rounded-xl bg-transparent text-black font-normal hover:bg-gray-100 focus:bg-gray-100 focus:border focus:border-gray-300">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <span className="hidden sm:block">Charitha Dhananjaya</span>
-            </Button>
+            <div className="flex flex-row gap-1">
+              <Button className="flex flex-row items-center gap-2 h-fit w-fit px-4 py-2.5 rounded-xl bg-transparent text-black font-normal hover:bg-gray-100 focus:bg-gray-100 focus:border focus:border-gray-300">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <span className="hidden sm:block">Charitha Dhananjaya</span>
+              </Button>
+              <button
+                className="p-2 text-sm font-medium text-black underline"
+                onClick={() => {
+                  logout();
+                }}
+              >
+                Logout
+              </button>
+            </div>
           </div>
 
           {/* Page Section */}

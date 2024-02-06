@@ -42,7 +42,9 @@ $ npm install --save
 
 ### Decisions Taken
 
-- Use Apollo Server and Client makes strucure the code with the limited use of different libraries and dependencies, this helps a lot to thik forward and desing uniquly and also they are typed.
+- Use Apollo Server and Client makes strucure the code, this reduced the use of different type libraries and dependencies, this helps a lot to thik forward and code readability.
+- Using the Apollo Client's state management for the app. 
+- Utilize the Apollo server and client cache provided accordingly. 
 - shadcn UI components are customisable REACT components, those are utilized as requred for the project.
 
 ### OSS Libraries
@@ -65,8 +67,9 @@ $ npm install --save
 
 ### What if(moreTime)
 
-- More Error handeling, Error pop-up etc.
+- More Error handeling, Error pop-up etc. instead of `alert` in the browser.
+- Making the list unique in the web app when adding the same country. 
 - localstorage provide some troubles, fixes are coming in the next steps. 
 - Creating the user sign-up feature
-- Should have improve the use to type in TS in both server and client
+- Should have improve the use of `type` in TS in both server and client
 - Could have hosted

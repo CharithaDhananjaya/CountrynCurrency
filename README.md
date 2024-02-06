@@ -2,7 +2,7 @@
 
 ## Update
 
-- Original Submission still availble in the branch `original-branch`
+- Original Submission still availble in the branch `original-submission`
 
 - Protected Route added custom hook with auth context and useLocalStorage.
 - Custom Hooks useAuth and useLocalStorage created, which elimate the issues arised with localStorage.getItem() and .setItem() that used in the original submission.

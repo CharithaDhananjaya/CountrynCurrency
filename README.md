@@ -66,6 +66,7 @@ $ npm install --save
 ### What if(moreTime)
 
 - More Error handeling, Error pop-up etc.
+- localstorage provide some troubles, fixes are coming in the next steps. 
 - Creating the user sign-up feature
 - Should have improve the use to type in TS in both server and client
 - Could have hosted

@@ -13,16 +13,16 @@
 - Clone the git repo and add the .env file with KEYs to the server directory. [Rename the sampleenv.txt file to .env]
 - Start server and client separatly
 
-## Dependecies
+## Development Server and Client
 
 ```
 # server
 $ npm install --save
+$ npm start
 
 #client
 $ npm install --save
-
-####
+$ npm run dev
 
 ```
 

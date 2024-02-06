@@ -16,7 +16,7 @@ $ npm install --save
 
 ```
 ## Check the Video
-- Youtube Link : `[https://youtu.be/DbuSdYIR5h4]`
+- `Youtube Link` : [https://youtu.be/DbuSdYIR5h4]
 
 ## Development Approach
 

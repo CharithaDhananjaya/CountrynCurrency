@@ -13,8 +13,10 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext(() => {
-  const token = JSON.parse(localStorage.getItem("authUser")).token;
-  console.log("JWT", token);
+  //const token = JSON.parse(localStorage.getItem("authUser")).token;
+  //console.log("JWT", token);
+
+  const token = "abc"; //temp fix for working only
 
   return {
     headers: {

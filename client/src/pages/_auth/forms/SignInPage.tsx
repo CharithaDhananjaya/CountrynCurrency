@@ -111,12 +111,7 @@ function SignInForm() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input
-                    type="password"
-                    placeholder="shadcn"
-                    {...field}
-                    className=""
-                  />
+                  <Input type="password" {...field} className="" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

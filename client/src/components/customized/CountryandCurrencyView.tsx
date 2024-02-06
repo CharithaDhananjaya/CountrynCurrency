@@ -45,8 +45,8 @@ function CountryandCurrencyView({ countryData }) {
 
   return (
     <>
-      <div className="flex flex-col items-start justify-center w-full gap-2 py-4 bg-white border border-gray-300 rounded-md shadow-sm">
-        <div className="flex flex-row justify-between w-full gap-2 h-fit">
+      <div className="flex flex-col items-start justify-center w-full gap-2 py-4 bg-white border border-gray-300 rounded-md shadow-md">
+        <div className="flex flex-row justify-between w-full gap-2 rounded-md h-fit">
           <div className="flex flex-col px-4 py-2 w-8/10">
             <div className="flex flex-row items-center gap-2 text-2xl italic font-extrabold text-black text-normal">
               <img

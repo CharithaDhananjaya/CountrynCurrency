@@ -31,7 +31,7 @@ $ npm install --save
 ### Client
 
 - React + Vite + Tailwind setup used with `Apollo Client`
-- React Router used with Navigate,Outlet for protected Routing
+- HOC and React Router used with Navigate,Outlet for protected Routing
 - `useQuery` and `useLazyQuery` used from apollo client
 - `useQuery` used to lookup the search country with variables
 - `uesLazyQuery` used for user signed-in

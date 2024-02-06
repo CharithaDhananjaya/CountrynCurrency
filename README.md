@@ -15,6 +15,8 @@ $ npm install --save
 $ npm install --save
 
 ```
+## Check the Video
+- Youtube Link : `[https://youtu.be/DbuSdYIR5h4]`
 
 ## Development Approach
 
@@ -39,6 +41,7 @@ $ npm install --save
 - Since backend provide chained resolvers currency convertion data are received when only country added to the list. This saves number of API calls to the Fixer API which is limited and costly if used paid subscription.
 - A custom hook `useDebounce` was created for the search input, so it was not trigger each key press of input change. This reduce and controll the number of request sending to the server while searching. And user will have the search suggestions as well
 - used shadcn components as main tempalate but customised them as required in re-useable manner
+- SignIn page and Signup pages forms are validate. Used a pre-build template for my other project and customised for this project. 
 
 ### Decisions Taken
 
@@ -49,8 +52,11 @@ $ npm install --save
 
 ### OSS Libraries
 
+- `tailwindcss`
 - `jsonwebtokens`
 - `shadcn`
+- `zod`
+- `clx`
 
 ### References
 
@@ -68,6 +74,7 @@ $ npm install --save
 ### What if(moreTime)
 
 - More Error handeling, Error pop-up etc. instead of `alert` in the browser.
+- Improving the responsive behaviour for mobiles.
 - Making the list unique in the web app when adding the same country. 
 - localstorage provide some troubles, fixes are coming in the next steps. 
 - Creating the user sign-up feature

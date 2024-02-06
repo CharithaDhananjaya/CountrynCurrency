@@ -1,9 +1,12 @@
 # CountrynCurrency
 
-## Upgraded
+## Update
+
+- Original Submission still availble in the branch `original-branch`
 
 - Protected Route added custom hook with auth context and useLocalStorage.
-- Original Submission still availble in the branch `original-branch`
+- Custom Hooks useAuth and useLocalStorage created, which elimate the issues arised with localStorage.getItem() and .setItem() that used in the original submission.
+- The solution inspired with custom hooks and Context API from -> LogRocket and Jeff Edmondson
 
 ## Setup
 
@@ -78,6 +81,8 @@ $ npm install --save
 - Apollo Client : [https://www.apollographql.com/docs/react/]
 - Stackoverflow
 - Apollo Odyssey Lift-off I, II, III
+- LogRocket - Authentication with React Router [https://blog.logrocket.com/authentication-react-router-v6/]
+- Jeff Edmondson - Tutorial: Protected Routes in React with Custom Hook & Context API [https://www.jeffedmondson.dev/react-protected-routes/]
 
 ### Test User Credentials
 

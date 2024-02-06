@@ -1,5 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 
+import { useAuth } from "../../../hooks/useAuth";
+
 import { gql, useLazyQuery } from "@apollo/client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,6 +23,8 @@ import { Input } from "../../../components/ui/input";
 import { signInSchema } from "../../../lib/validations/index";
 
 function SignInForm() {
+  const { login } = useAuth();
+
   const navigate = useNavigate();
 
   const USER_SIGNIN = gql`
@@ -36,20 +40,21 @@ function SignInForm() {
     }
   `;
   const [userSignIn, { loading, error, data }] = useLazyQuery(USER_SIGNIN, {
-    fetchPolicy: "no-cache",
-    notifyOnNetworkStatusChange: true,
-    onCompleted: (data) => {
+    // fetchPolicy: "no-cache",
+    // notifyOnNetworkStatusChange: true,
+    onCompleted: async (data) => {
       if (data.userSignIn.message === "USER_NOT_FOUND") {
-        localStorage.clear();
+        //localStorage.clear();
         alert("Invalid Email");
         navigate("/");
       } else if (data.userSignIn.message === "INVALID_PASSWORD") {
-        localStorage.clear();
+        //localStorage.clear();
         alert("Invalid Password");
         navigate("/");
       } else {
-        localStorage.clear();
-        localStorage.setItem("authUser", JSON.stringify(data.userSignIn));
+        await login(data.userSignIn);
+        // localStorage.clear();
+        // localStorage.setItem("authUser", JSON.stringify(data.userSignIn));
         navigate("/user");
       }
     },
@@ -119,7 +124,7 @@ function SignInForm() {
           />
 
           <Button className="self-center w-3/5 mt-4" type="submit">
-            Submit
+            Sign In
           </Button>
           <div className="flex flex-row items-center justify-center gap-3 mt-2 text-gray-500 md:justify-end ">
             <span className="text-sm font-medium underline underline-offset-1 hover:text-gray-800">

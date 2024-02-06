@@ -123,7 +123,7 @@ function SignUpPage() {
           />
 
           <Button className="self-center w-3/5 mt-4" type="submit">
-            Submit
+            Sign Up
           </Button>
           <div className="flex flex-row items-center justify-center gap-3 mt-2 text-gray-500 md:justify-end ">
             <span className="text-xs font-normal">

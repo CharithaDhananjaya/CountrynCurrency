@@ -31,7 +31,7 @@ $ npm install --save
 ### Client
 
 - React + Vite + Tailwind setup used with `Apollo Client`
-- React Router used with Navigate,Outlet for protected Routing
+- HOC and React Router used with Navigate,Outlet for protected Routing
 - `useQuery` and `useLazyQuery` used from apollo client
 - `useQuery` used to lookup the search country with variables
 - `uesLazyQuery` used for user signed-in
@@ -66,6 +66,7 @@ $ npm install --save
 ### What if(moreTime)
 
 - More Error handeling, Error pop-up etc.
+- localstorage provide some troubles, fixes are coming in the next steps. 
 - Creating the user sign-up feature
 - Should have improve the use to type in TS in both server and client
 - Could have hosted

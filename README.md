@@ -2,7 +2,7 @@
 
 ## Setup
 
-- Clone the git repo and add the .env file with KEYs to the server directory.
+- Clone the git repo and add the .env file with KEYs to the server directory. [Rename the sampleenv.txt file to .env]
 - Start server and client separatly
 
 ## Dependecies
@@ -20,22 +20,24 @@ $ npm install --save
 
 ### Server
 
-- A GraphQL backend setup with Apollo Server
-- Queries created for Search a Country from [https://restcountries.com/] and Resolvers are chaines to get the currancy convertion data for each country from [https://fixer.io/]
+- A GraphQL backend setup with `Apollo Server`
+- Queries created for Search a Country from [https://restcountries.com/] and Resolvers are chained to get the currancy convertion data for each country from [https://fixer.io/]
 - Use `@apollo/rest-datasources` to use the above REST APIs as data sources for the server
-- When Searching for a country using a particular input text it provides all the results matched from API as array, searching through country.name.common, country.name.official and country.cca3 for the matches
+- When Searching for a country using a particular input it provides all the results matched from API as array, searching through country.name.common, country.name.official and country.cca3 for the matches
 - When a country is selected from the UI, it request the aditional data population, currencies from server + courrency convertions are also provided by the chained resolver
-
+- Apollo Server `InMemoryCache` used for caching which does the heavy lifting for cache but it provided with a intuitive API to configure it through `apollo context` in the server. 
 - A user is mimiked by user.mimk.js and sperate userSignIn enpoint utilized providing JWT token
 
 ### Client
 
-- React + Vite + Tailwind setup used with Apollo Client
+- React + Vite + Tailwind setup used with `Apollo Client`
 - React Router used with Navigate,Outlet for protected Routing
 - `useQuery` and `useLazyQuery` used from apollo client
 - `useQuery` used to lookup the search country with variables
 - `uesLazyQuery` used for user signed-in
-- A custom hook "useDebounce" was created for the search input
+-  Apollo Client's `State Management` used through it's `InMemoryCache`, `makeVar` and `useReactiveVar` for reactivity.
+- Since backend provide chained resolvers currency convertion data are received when only country added to the list. This saves number of API calls to the Fixer API which is limited and costly if used paid subscription.
+- A custom hook `useDebounce` was created for the search input, so it was not trigger each key press of input change. This reduce and controll the number of request sending to the server while searching. And user will have the search suggestions as well
 - used shadcn components as main tempalate but customised them as required in re-useable manner
 
 ### Decisions Taken
@@ -61,10 +63,9 @@ $ npm install --save
 - email: "test.user@gmail.com",
 - password: "abc123",
 
-### What Not Feels Great
+### What if(moreTime)
 
+- More Error handeling, Error pop-up etc.
 - Creating the user sign-up feature
 - Should have improve the use to type in TS in both server and client
-- Took a little extra than a day as focus this project as a test
-- Some silly typos eventually
 - Could have hosted
